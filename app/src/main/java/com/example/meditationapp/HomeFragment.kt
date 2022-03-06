@@ -24,10 +24,13 @@ class HomeFragment : Fragment() {
     lateinit var rvDays: RecyclerView
     lateinit var adapter: DaysAdapter
     var days = listOf(
-        Day(1, "Nunc eget sit verr", "suluarh"),
-        Day(2, "Nuncaot sit verr", "suluarh"),
-        Day(3, "au oeu sit verr", "suluarh"),
-        Day(4, "simth eget sit verr", "suluarh")
+        Day(1, "Visualization", "Sleep Vitality"),
+        Day(2, "Affirmation", "Vitality Breath"),
+        Day(3, "Relaxation", "Wellness"),
+        Day(4, "Productivity", "Mind/Body Connection"),
+        Day(5, "Chakra", "Energy"),
+        Day(6, "Mudra", "Fresh Air"),
+        Day(7, "Reflection", "Vitality")
     )
 
     lateinit var btWeekBackward: ImageButton
@@ -67,8 +70,12 @@ class HomeFragment : Fragment() {
 
         //Display the starting date for current week
         val calendar: Calendar = Calendar.getInstance()
+        calendar.add(Calendar.DAY_OF_MONTH, Calendar.MONDAY - calendar.get(Calendar.DAY_OF_WEEK)-7)
         val pattern = Regex(" [0-9][0-9]:.*")
-        tvWeekDate.text = "The week of ${pattern.replace(calendar.time.toString(), "")}"
+
+        var weekStart: String = pattern.replace(calendar.time.toString(), "")
+        weekStart = weekStart.replace("Mon ", "")
+        tvWeekDate.text = "The week of $weekStart"
 
         //Display the numerical day of the week
         tvDaysRemainingMsg.text = "You are on day ${Calendar.DAY_OF_WEEK} of\n this week's meditation"
@@ -79,8 +86,6 @@ class HomeFragment : Fragment() {
         val clickListener = object : DaysAdapter.ClickListener {
             override fun onQueueClicked(position: Int) {
                 Log.i(TAG, "onQueueClicked")
-
-                //todo navigate to media player fragment
 
                 navController.navigate(R.id.action_homeFragment_to_playerFragment)
             }

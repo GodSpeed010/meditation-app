@@ -8,7 +8,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class DaysAdapter(val days: List<Day>) : RecyclerView.Adapter<DaysAdapter.ViewHolder>() {
+class DaysAdapter(val days: List<Day>, val clickListener: ClickListener) : RecyclerView.Adapter<DaysAdapter.ViewHolder>() {
+    interface ClickListener {
+        fun onQueueClicked(position: Int)
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DaysAdapter.ViewHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
@@ -31,14 +34,19 @@ class DaysAdapter(val days: List<Day>) : RecyclerView.Adapter<DaysAdapter.ViewHo
         return days.size
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvDayNumber = itemView.findViewById<TextView>(R.id.tvDayNumber)
-        val tvDayTitle = itemView.findViewById<TextView>(R.id.tvDayTitle)
-        val tvDayBody = itemView.findViewById<TextView>(R.id.tvDayBody)
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val tvDayNumber: TextView = itemView.findViewById(R.id.tvDayNumber)
+        val tvDayTitle: TextView = itemView.findViewById(R.id.tvDayTitle)
+        val tvDayBody: TextView = itemView.findViewById(R.id.tvDayBody)
 
+        val ivDownload: ImageButton = itemView.findViewById(R.id.ivDownload)
+        val ivQueueMusic: ImageButton = itemView.findViewById(R.id.ivQueueMusic)
+        val ivHeart: ImageButton = itemView.findViewById(R.id.ivHeart)
 
-        val ivDownload = itemView.findViewById<ImageButton>(R.id.ivDownload)
-        val ivQueueMusic = itemView.findViewById<ImageButton>(R.id.ivQueueMusic)
-        val ivHeart = itemView.findViewById<ImageButton>(R.id.ivHeart)
+        init {
+            ivQueueMusic.setOnClickListener {
+                clickListener.onQueueClicked(adapterPosition)
+            }
+        }
     }
 }

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_player_bg"
+    tools:context=".PlayerFragment">
+
+
+    <TextView
+        android:id="@+id/tvCurrentWeek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:text="The week of March, 6"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMeditationType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Clarity"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCurrentWeek" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:max="100"
+        android:min="0"
+        android:progress="40"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMeditationType" />
+
+    <ImageButton
+        android:id="@+id/ib_playPause"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/ic_play_circle"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <ImageButton
+        android:id="@+id/ibBackwardTen"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/ic_replay_10"
+
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintEnd_toStartOf="@+id/ib_playPause"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <ImageButton
+        android:id="@+id/ibForwardTen"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/ic_forward_10"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ib_playPause"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <ImageButton
+        android:id="@+id/ivHeart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_favorite"
+        app:layout_constraintBottom_toBottomOf="@+id/ivDownload"
+        app:layout_constraintEnd_toStartOf="@+id/ivDownload"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivDownload"
+        app:layout_constraintHorizontal_bias=".8"
+        app:tint="@color/white" />
+
+    <ImageButton
+        android:id="@+id/ivDownload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_download"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ib_playPause"
+        app:tint="@color/white" />
+
+    <ImageButton
+        android:id="@+id/ivQueueMusic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_queue_music"
+        app:layout_constraintBottom_toBottomOf="@+id/ivDownload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivDownload"
+        app:layout_constraintTop_toTopOf="@+id/ivDownload"
+        app:layout_constraintHorizontal_bias=".2"
+        app:tint="@color/white" />
+</androidx.constraintlayout.widget.ConstraintLayout>

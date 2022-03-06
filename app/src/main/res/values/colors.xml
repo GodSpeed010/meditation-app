@@ -11,4 +11,7 @@
     <color name="card_green">#00C7B1</color>
     <color name="dark_blue">#3F3059</color>
     <color name="bg_yellow">#fddd9b</color>
+
+    <color name="gradient_top">#FDDD9B</color>
+    <color name="gradient_bottom">#3F3059</color>
 </resources>

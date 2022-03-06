@@ -5,18 +5,24 @@
       <map>
         <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/drawable/android_hom.xml" value="0.1445" />
         <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/drawable/day_item.xml" value="0.1445" />
+        <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/drawable/gradient_player_bg.xml" value="0.193" />
         <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/drawable/home_enabled.xml" value="0.234" />
         <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/drawable/ic_arrow_back.xml" value="0.423" />
         <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/drawable/ic_arrow_forward.xml" value="0.423" />
         <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/drawable/ic_favorite.xml" value="0.234" />
+        <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/drawable/ic_forward_10.xml" value="0.1115" />
         <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/drawable/ic_headphones.xml" value="0.234" />
         <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/drawable/ic_home.xml" value="0.234" />
         <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/drawable/ic_more.xml" value="0.234" />
+        <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/drawable/ic_play_circle.xml" value="0.1115" />
+        <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/drawable/ic_replay_10.xml" value="0.1115" />
         <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/drawable/navigation_text_color.xml" value="0.1045" />
         <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/drawable/rounded_corner.xml" value="0.423" />
         <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/layout-v23/activity_main.xml" value="0.17083333333333334" />
         <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/layout/day_item.xml" value="0.2" />
+        <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/layout/fragment_home.xml" value="0.4244791666666667" />
+        <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/layout/fragment_player.xml" value="0.264" />
         <entry key="..\:/Users/ahmad/AndroidStudioProjects/Personal Projects/MeditationApp/app/src/main/res/menu/bottom_nav.xml" value="0.2765625" />
       </map>
     </option>

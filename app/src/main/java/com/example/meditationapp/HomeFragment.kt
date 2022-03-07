@@ -64,21 +64,34 @@ class HomeFragment : Fragment() {
 
         return view
     }
-    
+
     private fun setupUI() {
         setupRecyclerView()
 
         //Display the starting date for current week
         val calendar: Calendar = Calendar.getInstance()
-        calendar.add(Calendar.DAY_OF_MONTH, Calendar.MONDAY - calendar.get(Calendar.DAY_OF_WEEK)-7)
-        val pattern = Regex(" [0-9][0-9]:.*")
 
+        //todo if calendar date is Sunday, then do the 2nd line, else 1st
+        if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+            Log.i(TAG, "day is Sunday. ${calendar.get(Calendar.DAY_OF_WEEK)}")
+            calendar.add(
+                Calendar.DAY_OF_MONTH,
+                Calendar.MONDAY - calendar.get(Calendar.DAY_OF_WEEK)
+            )
+        } else {
+            Log.i(TAG, "Day is not Sunday. ${calendar.get(Calendar.DAY_OF_WEEK)}")
+            calendar.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY)
+        }
+        
+        val pattern = Regex(" [0-9][0-9]:.*")
         var weekStart: String = pattern.replace(calendar.time.toString(), "")
         weekStart = weekStart.replace("Mon ", "")
         tvWeekDate.text = "The week of $weekStart"
 
         //Display the numerical day of the week
-        tvDaysRemainingMsg.text = "You are on day ${Calendar.DAY_OF_WEEK} of\n this week's meditation"
+        //todo this is incorrect. It's a static number
+        tvDaysRemainingMsg.text =
+            "You are on day ${Calendar.DAY_OF_WEEK} of\n this week's meditation"
     }
 
     private fun setupRecyclerView() {

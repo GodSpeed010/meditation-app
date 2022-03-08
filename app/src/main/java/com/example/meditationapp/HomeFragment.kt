@@ -41,6 +41,8 @@ class HomeFragment : Fragment() {
 
     lateinit var navController: NavController
 
+    lateinit var weekStart: String
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -70,7 +72,7 @@ class HomeFragment : Fragment() {
 
         //Display the starting date for current week
         val calendar: Calendar = Calendar.getInstance()
-
+        val dayOfWeek: Int = getDayOfWeek(calendar)
         //todo if calendar date is Sunday, then do the 2nd line, else 1st
         if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
             Log.i(TAG, "day is Sunday. ${calendar.get(Calendar.DAY_OF_WEEK)}")
@@ -84,14 +86,25 @@ class HomeFragment : Fragment() {
         }
         
         val pattern = Regex(" [0-9][0-9]:.*")
-        var weekStart: String = pattern.replace(calendar.time.toString(), "")
+        weekStart = pattern.replace(calendar.time.toString(), "")
         weekStart = weekStart.replace("Mon ", "")
-        tvWeekDate.text = "The week of $weekStart"
+        weekStart = "The week of $weekStart"
+        tvWeekDate.text = weekStart
 
         //Display the numerical day of the week
-        //todo this is incorrect. It's a static number
         tvDaysRemainingMsg.text =
-            "You are on day ${Calendar.DAY_OF_WEEK} of\n this week's meditation"
+            "You are on day ${dayOfWeek} of\n this week's meditation"
+    }
+
+    //returns current day of week as Int, where week starts on Monday
+    private fun getDayOfWeek(calendar: Calendar): Int {
+        val dayNum: Int = calendar.get(Calendar.DAY_OF_WEEK)
+
+        return if (dayNum == 1) {
+            7
+        } else {
+            dayNum - 1
+        }
     }
 
     private fun setupRecyclerView() {
@@ -100,7 +113,8 @@ class HomeFragment : Fragment() {
             override fun onQueueClicked(position: Int) {
                 Log.i(TAG, "onQueueClicked")
 
-                navController.navigate(R.id.action_homeFragment_to_playerFragment)
+                val action = HomeFragmentDirections.actionHomeFragmentToPlayerFragment(weekStart)
+                navController.navigate(action)
             }
         }
 
